@@ -1,0 +1,8 @@
+# Handle Single Page Application routing
+/*    /index.html   200
+
+# Handle API calls (when you have a backend)
+/api/*  https://your-api-domain.com/api/:splat  200
+
+# Handle WebSocket connections
+/ws/*   wss://your-websocket-domain.com/ws/:splat  200
