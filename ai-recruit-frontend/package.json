@@ -11,12 +11,15 @@
     "build": "turbo build",
     "build:recruiter": "turbo build --filter=@ai-recruit/recruiter-dashboard",
     "build:candidate": "turbo build --filter=@ai-recruit/candidate-portal",
+    "generate:recruiter": "pnpm --filter @ai-recruit/recruiter-dashboard generate",
+    "generate:candidate": "pnpm --filter @ai-recruit/candidate-portal generate",
     "preview": "turbo preview",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
     "clean": "turbo clean",
     "recruiter:dev": "pnpm --filter @ai-recruit/recruiter-dashboard dev",
     "candidate:dev": "pnpm --filter @ai-recruit/candidate-portal dev",
+    "mock:dev": "pnpm --filter @ai-recruit/mock-api dev",
     "mock:dev": "pnpm --filter @ai-recruit/mock-api dev"
   },
   "devDependencies": {
