@@ -1,31 +1,34 @@
 {
   "name": "ai-recruit-frontend",
-  "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@8.15.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "build:recruiter": "turbo build --filter=@ai-recruit/recruiter-dashboard",
+    "build:candidate": "turbo build --filter=@ai-recruit/candidate-portal",
     "preview": "turbo preview",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
-    "test": "turbo test",
-    "clean": "turbo clean && rm -rf node_modules",
-    "recruiter:dev": "turbo dev --filter=@ai-recruit/recruiter-dashboard",
-    "candidate:dev": "turbo dev --filter=@ai-recruit/candidate-portal",
-    "mock:dev": "turbo dev --filter=@ai-recruit/mock-api",
-    "ui:dev": "turbo dev --filter=@ai-recruit/ui"
+    "clean": "turbo clean",
+    "recruiter:dev": "pnpm --filter @ai-recruit/recruiter-dashboard dev",
+    "candidate:dev": "pnpm --filter @ai-recruit/candidate-portal dev",
+    "mock:dev": "pnpm --filter @ai-recruit/mock-api dev"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
+    "@nuxt/devtools": "^1.0.8",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
     "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-vue": "^9.20.0",
-    "prettier": "^3.2.0",
-    "turbo": "^1.12.0",
+    "turbo": "^1.12.2",
     "typescript": "^5.3.3"
   },
+  "packageManager": "pnpm@8.15.0",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
