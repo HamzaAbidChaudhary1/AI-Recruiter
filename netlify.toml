@@ -1,0 +1,28 @@
+# Netlify configuration for AI Recruitment Platform
+[build]
+  # Set the base directory to your frontend folder
+  base = "ai-recruit-frontend"
+  
+  # Build command for the recruiter dashboard (main app)
+  command = "npm install -g pnpm && pnpm install && pnpm build:recruiter"
+  
+  # Directory with built files
+  publish = "ai-recruit-frontend/apps/recruiter-dashboard/.output/public"
+
+# Handle Single Page Application routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables (add these in Netlify dashboard)
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+  PNPM_VERSION = "8"
+
+# Alternative build settings for candidate portal
+# [build]
+#   base = "ai-recruit-frontend"
+#   command = "npm install -g pnpm && pnpm install && pnpm build:candidate"
+#   publish = "ai-recruit-frontend/apps/candidate-portal/.output/public"
