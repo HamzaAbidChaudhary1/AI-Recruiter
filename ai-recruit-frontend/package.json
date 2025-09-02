@@ -19,7 +19,6 @@
     "clean": "turbo clean",
     "recruiter:dev": "pnpm --filter @ai-recruit/recruiter-dashboard dev",
     "candidate:dev": "pnpm --filter @ai-recruit/candidate-portal dev",
-    "mock:dev": "pnpm --filter @ai-recruit/mock-api dev",
     "mock:dev": "pnpm --filter @ai-recruit/mock-api dev"
   },
   "devDependencies": {
