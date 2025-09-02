@@ -1,12 +1,10 @@
 [build]
   base = "ai-recruit-frontend/apps/recruiter-dashboard"
   command = """
-    echo "Removing workspace files to avoid npm workspace detection..." &&
-    rm -f ../../package.json ../../pnpm-workspace.yaml &&
-    echo "Installing dependencies without workspace context..." &&
-    npm install --no-workspaces --legacy-peer-deps &&
-    echo "Running generate..." &&
-    npm run generate
+    echo "Using Yarn to avoid npm workspace issues..." &&
+    npm install -g yarn &&
+    yarn install --ignore-workspace-root-check &&
+    yarn generate
   """
   publish = "dist"
 
