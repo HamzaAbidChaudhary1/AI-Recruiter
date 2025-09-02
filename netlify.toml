@@ -1,6 +1,6 @@
 [build]
-  command = "chmod +x build-netlify.sh && ./build-netlify.sh"
-  publish = "ai-recruit-frontend/dist"
+  command = "npm install -g pnpm && cd ai-recruit-frontend && pnpm install --frozen-lockfile && pnpm generate:recruiter"
+  publish = "ai-recruit-frontend/apps/recruiter-dashboard/dist"
 
 [[redirects]]
   from = "/*"
