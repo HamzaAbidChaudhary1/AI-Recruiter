@@ -1,11 +1,25 @@
 [build]
   base = "ai-recruit-frontend/apps/recruiter-dashboard"
-  command = "yarn install && yarn generate"
+  command = """
+    echo "=== Debug Info ===" &&
+    node --version &&
+    npm --version &&
+    echo "=== Current Directory ===" &&
+    pwd &&
+    echo "=== Package.json exists? ===" &&
+    ls -la package.json &&
+    echo "=== Package.json content (first 50 lines) ===" &&
+    head -50 package.json &&
+    echo "=== Installing with verbose output ===" &&
+    npm install --verbose &&
+    echo "=== Running generate ===" &&
+    npm run generate
+  """
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
-  NPM_FLAGS = "--prefix=/dev/null"
+  NPM_CONFIG_LOGLEVEL = "verbose"
 
 [[redirects]]
   from = "/*"
