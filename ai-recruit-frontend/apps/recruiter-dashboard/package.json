@@ -1,10 +1,11 @@
+
 {
   "name": "@ai-recruit/recruiter-dashboard",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxi dev --port 3000",
-    "build": "nuxi build",
+    "build": "nuxi build", 
     "preview": "nuxi preview",
     "generate": "nuxi generate",
     "type-check": "nuxi typecheck",
@@ -12,20 +13,13 @@
     "clean": "rm -rf .nuxt .output node_modules"
   },
   "dependencies": {
-    "@ai-recruit/ui": "workspace:*",
-    "@ai-recruit/composables": "workspace:*",
-    "@ai-recruit/types": "workspace:*",
-    "@ai-recruit/utils": "workspace:*",
-    "@formkit/nuxt": "^1.5.0",
-    "@formkit/themes": "^1.5.0",
     "@nuxt/ui": "^2.13.0",
-    "@pinia/nuxt": "^0.5.1",
+    "@pinia/nuxt": "^0.5.1", 
     "@vite-pwa/nuxt": "^0.5.0",
     "@vueuse/nuxt": "^10.7.0",
     "chart.js": "^4.4.0",
     "d3": "^7.8.0",
     "echarts": "^5.4.0",
-    "echarts-gl": "^2.0.9",
     "floating-vue": "^5.2.0",
     "gsap": "^3.12.0",
     "lottie-web": "^5.12.0",
@@ -34,15 +28,13 @@
     "pinia": "^2.1.0",
     "socket.io-client": "^4.7.0",
     "three": "^0.161.0",
-    "vee-validate": "^4.12.0",
     "vue": "^3.4.0",
-    "vue-echarts": "^6.6.0",
-    "zod": "^3.22.0"
+    "vue-echarts": "^6.6.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.3.0",
     "@types/d3": "^7.4.0",
-    "@types/three": "^0.161.0",
+    "@types/three": "^0.161.0", 
     "@unocss/nuxt": "^0.58.0",
     "typescript": "^5.3.3",
     "unocss": "^0.58.0"
