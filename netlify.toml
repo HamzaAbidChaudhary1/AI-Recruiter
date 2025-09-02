@@ -1,18 +1,18 @@
 [build]
-  base = "ai-recruit-frontend/apps/recruiter-dashboard" 
-  command = """
-    echo "Installing with workspace disabled..." &&
-    npm install --no-workspaces --force &&
-    echo "Generating static site..." &&
-    npm run generate
-  """
-  publish = "dist"
+  command = "cd ai-recruit-frontend && npm install -g pnpm && pnpm install && pnpm --filter @ai-recruit/recruiter-dashboard generate"
+  publish = "ai-recruit-frontend/apps/recruiter-dashboard/.output/public"
 
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_CONFIG_WORKSPACES = "false"
+  NODE_VERSION = "20"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
