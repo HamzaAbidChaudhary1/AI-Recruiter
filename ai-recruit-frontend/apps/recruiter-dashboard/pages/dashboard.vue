@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import AnimatedCard from '@ai-recruit/ui/components/AnimatedCard.vue'
+import StatsCard from '@ai-recruit/ui/components/StatsCard.vue'
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <!-- Header -->
