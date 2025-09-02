@@ -1,5 +1,5 @@
 [build]
-  command = "cd ai-recruit-frontend && npm install -g pnpm@8.15.0 && pnpm install && pnpm generate:recruiter"
+  command = "npm install -g pnpm@8.15.0 --force && cd ai-recruit-frontend && pnpm install --frozen-lockfile && pnpm generate:recruiter"
   publish = "ai-recruit-frontend/apps/recruiter-dashboard/dist"
 
 [build.environment]
