@@ -1,10 +1,10 @@
 [build]
-  command = "npm install -g pnpm@8.15.0 --force && cd ai-recruit-frontend && pnpm install --frozen-lockfile && pnpm generate:recruiter"
+  command = "which pnpm || npm install -g pnpm@8.15.0 && cd ai-recruit-frontend && pnpm install --frozen-lockfile && pnpm generate:recruiter"
   publish = "ai-recruit-frontend/apps/recruiter-dashboard/dist"
 
 [build.environment]
   NODE_VERSION = "20"
-  NUXT_PUBLIC_API_BASE = "https://jsonplaceholder.typicode.com"
+  NUXT_PUBLIC_API_BASE = "https://jsonplaceholder.typicode.com" 
   NUXT_PUBLIC_WS_URL = "wss://echo.websocket.org"
 
 [[redirects]]
