@@ -1,7 +1,7 @@
 [build]
-  base = "ai-recruit-frontend"
-  command = "npm install -g pnpm && pnpm install && pnpm generate:recruiter"
-  publish = "apps/recruiter-dashboard/dist"
+  # Remove the base directory to build from repo root
+  command = "cd ai-recruit-frontend && npm install -g pnpm && pnpm install && pnpm build:recruiter"
+  publish = "ai-recruit-frontend/apps/recruiter-dashboard/.output/public"
 
 [[redirects]]
   from = "/*"
