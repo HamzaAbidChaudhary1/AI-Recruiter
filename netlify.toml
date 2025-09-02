@@ -1,25 +1,17 @@
 [build]
   base = "ai-recruit-frontend/apps/recruiter-dashboard"
   command = """
-    echo "=== Debug Info ===" &&
-    node --version &&
-    npm --version &&
-    echo "=== Current Directory ===" &&
-    pwd &&
-    echo "=== Package.json exists? ===" &&
-    ls -la package.json &&
-    echo "=== Package.json content (first 50 lines) ===" &&
-    head -50 package.json &&
-    echo "=== Installing with verbose output ===" &&
-    npm install --verbose &&
-    echo "=== Running generate ===" &&
+    echo "Removing workspace files to avoid npm workspace detection..." &&
+    rm -f ../../package.json ../../pnpm-workspace.yaml &&
+    echo "Installing dependencies without workspace context..." &&
+    npm install --no-workspaces --legacy-peer-deps &&
+    echo "Running generate..." &&
     npm run generate
   """
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
-  NPM_CONFIG_LOGLEVEL = "verbose"
 
 [[redirects]]
   from = "/*"
