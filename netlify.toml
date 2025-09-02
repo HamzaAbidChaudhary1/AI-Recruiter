@@ -1,20 +1,16 @@
 [build]
+  base = "ai-recruit-frontend/apps/recruiter-dashboard" 
   command = """
-    echo "Creating isolated build environment..." &&
-    mkdir -p /tmp/build &&
-    cp -r ai-recruit-frontend/apps/recruiter-dashboard/* /tmp/build/ &&
-    cd /tmp/build &&
-    echo "Installing in isolated environment..." &&
-    npm install &&
-    echo "Building..." &&
-    npm run generate &&
-    echo "Copying build output back..." &&
-    cp -r dist/* /opt/build/repo/netlify-output/
+    echo "Installing with workspace disabled..." &&
+    npm install --no-workspaces --force &&
+    echo "Generating static site..." &&
+    npm run generate
   """
-  publish = "netlify-output"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_CONFIG_WORKSPACES = "false"
 
 [[redirects]]
   from = "/*"
